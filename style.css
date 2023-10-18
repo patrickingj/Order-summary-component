@@ -1,0 +1,150 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg, button {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --ff-base: 'Red Hat Display', sans-serif;
+  --fw-base: 500;
+  --fw-bold: 700;
+  --fw-thicc: 900;
+  
+  --clr-pri-pale-blue: hsl(225, 100%, 94%);
+  --clr-bright-blue: hsl(245, 75%, 52%);
+  --clr-neu-pale-blue: hsl(225, 100%, 98%);
+  --clr-neu-desat-blue: hsl(224, 23%, 55%);
+  --clr-neu-dark-blue: hsl(223, 47%, 23%);
+  --clr-onhover: hsl(245, 75%, 72%);
+}
+
+body {
+  background-color: var(--clr-pri-pale-blue);
+  background-image: url("pattern-background-mobile.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  font-family: var(--ff-base);
+  margin: 1.5rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media (min-width: 600px) {
+  body {
+    background-image: url("pattern-background-desktop.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .order-info {
+    padding: 2rem;
+  }
+}
+
+h1, button, h4 {
+  font-weight: var(--fw-thicc);
+}
+
+h1, h4 {
+  color: var(--clr-neu-dark-blue);
+}
+
+.order-summary {
+  background-color: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  
+  text-align: center;
+  max-width: 375px;
+}
+
+.order-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+p  {
+  font-weight: var(--fw-base);
+  font-size: 1rem;
+  color: var(--clr-neu-desat-blue);
+}
+
+.plan-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 0;
+  
+  background-color: var(--clr-neu-pale-blue);
+  border-radius: 0.8rem;
+}
+
+.plan {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.payment-section {
+  display: grid;
+  gap: 0.5rem;
+}
+
+button {
+  padding: 0.7rem 0;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.payment {
+  background-color: var(--clr-bright-blue);
+  color: white;
+}
+
+.payment:is(:hover, :focus) {
+  background-color: var(--clr-onhover);
+}
+
+a:is(:hover, :focus) {
+  color: var(--clr-onhover);
+  text-decoration: none;
+}
+
+.cancel-payment {
+  color: var(--clr-neu-desat-blue);
+  background: none;
+}
+
+.cancel-payment:is(:hover, :focus) {
+  color: var(--clr-neu-dark-blue);
+}
+
+a {
+  color: var(--clr-bright-blue);
+  font-weight: var(--fw-bold);
+}
+
+button, a {
+  cursor: pointer;
+}
